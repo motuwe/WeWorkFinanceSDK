@@ -3,10 +3,10 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/NICEXAI/WeWorkFinanceSDK"
-	"io/ioutil"
 	"os"
 	"path"
+
+	"github.com/motuwe/WeWorkFinanceSDK"
 )
 
 func main() {
@@ -62,7 +62,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 			}
 			filePath, _ := os.Getwd()
 			filePath = path.Join(filePath, "test.png")
-			err := ioutil.WriteFile(filePath, buffer.Bytes(), 0666)
+			err := os.WriteFile(filePath, buffer.Bytes(), 0666)
 			if err != nil {
 				fmt.Printf("文件存储失败：%v \n", err)
 				return

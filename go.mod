@@ -1,3 +1,3 @@
-module github.com/NICEXAI/WeWorkFinanceSDK
+module github.com/motuwe/WeWorkFinanceSDK
 
-go 1.15
+go 1.19

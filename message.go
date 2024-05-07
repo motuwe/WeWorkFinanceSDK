@@ -380,12 +380,32 @@ type SphFeedMessage struct {
 	}
 }
 
-// VoiptextMessage 音视频通话
+// VoipTextMessage 音视频通话
 // 类型为：voiptext
-type VoiptextMessage struct {
+type VoipTextMessage struct {
 	BaseMessage
 	Voiptext struct {
 		Callduration uint32 `json:"callduration,omitempty"` // 通话时长，单位秒
 		Invitetype   uint32 `json:"invitetype,omitempty"`   // 通话类型，1:单人视频通话 2:单人语音通话 3:多人视频通话 4:多人语音通话
 	}
+}
+
+// MeetingNotificationMessage 会议控制消息
+// 类型为 meeting_notification
+type MeetingNotificationMessage struct {
+	BaseMessage
+	Info struct {
+		Content          string `json:"content,omitempty"`
+		MeetingID        uint64 `json:"meetingid,omitempty"`
+		NotificationType uint32 `json:"notification_type,omitempty"`
+	} `json:"info,omitempty"`
+}
+
+// QyDiskFileMessage 微盘文件
+// 类型为 qydiskfile
+type QyDiskFileMessage struct {
+	BaseMessage
+	Info struct {
+		FileName string `json:"filename,omitempty"`
+	} `json:"info,omitempty"`
 }
